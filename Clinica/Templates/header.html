@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <title>MENU PRINCIPAL</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+
+    body, html {
+      height: 100%;
+      color: #777;
+      line-height: 1.8;
+    }
+
+    /* Create a Parallax Effect */
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+      background-image: url('{% static '/images/clinica.jpg' %}');
+      min-height: 100%;
+    }
+
+    /* Second image (Portfolio) */
+    .bgimg-2 {
+      background-image: url("/w3images/parallax2.jpg");
+      min-height: 400px;
+    }
+
+    /* Third image (Contact) */
+    .bgimg-3 {
+      background-image: url("/w3images/parallax3.jpg");
+      min-height: 400px;
+    }
+
+    .w3-wide {letter-spacing: 10px;}
+    .w3-hover-opacity {cursor: pointer;}
+
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+    }
+    </style>
+    <body class="w3-light-gray">
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top w3-text-black w3-white">
+          <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a href="#home" class="w3-bar-item w3-button">HOME</a>
+            <a href="#institucion" class="w3-bar-item w3-button w3-hide-small"><i class="fas fa-hospital"></i> INSTITUCION</a>
+            <a href="#ruta" class="w3-bar-item w3-button w3-hide-small"><i class="fas fa-map-marker-alt"></i> COMO LLEGAR</a>
+            <a href="#contacto" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACTO</a>
+            <a class="w3-bar-item w3-right w3-button w3-hide-small" onclick="document.getElementById('login').style.display='block'"><i class="fas fa-user-circle"></i> INICIAR SESION</a>
+          </div>
+
+          <!-- Navbar on small screens -->
+          <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="#institucion" class="w3-bar-item w3-button" onclick="toggleFunction()">INSTITUCION</a>
+            <a href="#ruta" class="w3-bar-item w3-button" onclick="toggleFunction()">COMO LLEGAR</a>
+            <a href="#contacto" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACTO</a>
+            <a class="w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">INICIAR SESION</a>
+          </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="w3-center w3-black w3-padding-16">
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+    </body>
+</html>
+<!--<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Krankenhaus 2020</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+        <link rel="stylesheet" href="{% static 'css/barra.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <style>
+            body,h1,h2,h3,h4,h5 {font-family: 'Libre Baskerville', sans-serif;}
+        </style>
+    </head>
+    <body id="inicio" class="w3-indigo">
+        <header class="w3-bar w3-light-blue">
+            <div class="topnav">
+                <div class="topnav-centered">
+                    <a href="#inicio" class="active" onclick="mostrarInicio()"><img style="height: 73px" src="{% static 'images/LogoSerio.png' %}"></a>
+                </div>
+                <a href="" id="noticias" class="opcion">Noticias</a>
+                <a href="#contacto" onclick="mostrarContacto()" class="opcion">Contactenos</a>
+                <div class="topnav-right">
+                    <a href="#institucion" onclick="mostrarInstitucional()" class="opcion">Instintucional</a>
+                    <a id="login" class="opcion">Iniciar sesion</a>
+                </div>
+            </div>
+        </header>
+         block content
+         endblock
+        <footer class="w3-center w3-black w3-padding-16">
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+        </footer>
+    </body>
+</html>-->

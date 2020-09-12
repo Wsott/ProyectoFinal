@@ -1,0 +1,295 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">Clinica </span>Lorem Ipsum</span>
+  </div>
+</div>
+<hr>
+<div class="w3-content w3-container w3-padding-64" style="max-width:800px">
+    <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_nature_wide.jpg" style="max-width:100%">
+    <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_snow_wide.jpg" style="width:100%">
+    <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg" style="width:100%">
+</div>
+<hr>
+<div class="w3-teal w3-center">
+	<a href="#" onclick="location.href = 'covid';"><h3>Informacion con respecto al COVID-19 >></h3></a>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="institucion">
+  <h3 class="w3-center">La Institucion</h3>
+  <p class="w3-center"><em>Velamos por su buena salud</em></p>
+  <p>Nuestra clínica fue fundada en XXXX en la ciudad de Resistencia, provincia del Chaco. Desarrollamos todas las
+  especialidades de la medicina clínica desde un ambiente profesional. Con la seguridad como medio para lograr la
+  excelencia en nuestras prácticas, te acompañamos y cumplimos expectativas gracias al trabajo con profesionales
+  altamente capacitados. La atención personalizada y comprometida con cada caso y el empleo de tecnología de vanguardia
+  en cada práctica. Cuando asistís a Clínica “Lorem Ipsum”, te guía la confianza en nuestros valores.</p>
+
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Nuestra mision</b></p><br>
+      <img src="{% static '/images/mision.jpg' %}" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Nustra mision" width="500" height="333">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-padding-large">
+      <p>Nosotros nos centramos en llevar el bienestar para usted y su familia, contamos con un gran equipo de
+	  profesionales que velan por la salud de su familia.
+	  Siempre buscamos estar a la vanguardia tecnológica con el fin de brindarles facilidad y accesibilidad a
+	  todos nuestros pacientes mediante nuestra “clínica virtual” donde podrá realizar los tramites típicos que
+	  podría realizar en la clínica como puede ser consultar su historial de citas con los médicos o para poder
+	  solicitar turnos con alguno de nuestros especialistas. Ahora mas que nunca con la situación de aislamiento
+	  preventivo y obligatorio nuestra innovación tecnológica permite realizar todos los tramites que requiera
+	  sin tener que exponerse a la pandemia.</p>
+    </div>
+  </div>
+
+  <div class="w3-row">
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Nosotros creemos que la salud es lo mas importante y por eso buscamos ofrecer a la comunidad lo mejor
+	  con el fin de que todos nuestros pacientes puedan llevar una vida plena y saludable ya que un tratamiento
+	  con éxito comienza con un diagnóstico preciso, y nuestros expertos se toman el tiempo para que sea exacto.
+	  Un equipo de especialistas escuchará qué necesitas y evaluará tu afección desde todo punto de vista para
+	  crear el plan que sea mejor para ti.</p>
+    </div>
+
+	<div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Nuestra visión</b></p><br>
+      <img src="{% static '/images/vision.jpg' %}" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Nuestra vision" width="500" height="333">
+    </div>
+
+	<div class="w3-col m6 w3-hide-large w3-hide-medium w3-padding-large">
+      <p>Nosotros creemos que la salud es lo mas importante y por eso buscamos ofrecer a la comunidad lo mejor
+	  con el fin de que todos nuestros pacientes puedan llevar una vida plena y saludable ya que un tratamiento
+	  con éxito comienza con un diagnóstico preciso, y nuestros expertos se toman el tiempo para que sea exacto.
+	  Un equipo de especialistas escuchará qué necesitas y evaluará tu afección desde todo punto de vista para
+	  crear el plan que sea mejor para ti.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="contacto">
+    <h3 class="w3-center">Contactenos</h3>
+    <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m6 w3-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2105.249927279135!2d-58.986817044853375!3d-27.450753714659196!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf461f7d1bd%3A0x1f77a50cefe613f8!2sPlaza%2025%20de%20Mayo!5e0!3m2!1ses-419!2sar!4v1599602165987!5m2!1ses-419!2sar" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="w3-col m6 w3-panel">
+            <div class="w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Resistencia, Chaco<br>
+                <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Telefono: 362 400-0000<br>
+                <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: LoremIpsum@example.com<br>
+            </div>
+            <form action="/action_page.php" target="_blank">
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="Nombre">
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
+                    </div>
+                </div>
+
+                <div class="w3-row-padding" style="margin:0 -10px 8px -8px">
+                    <div class="">
+                        <input class="w3-input w3-border" type="text" placeholder="DNI" required name="DNI">
+                    </div>
+                </div>
+
+                <textarea style="resize: none;" class="w3-input w3-border" type="text" placeholder="Su mensaje" required name="Mensaje"></textarea>
+                <button class="w3-button w3-black w3-right w3-section" type="submit">
+                    <i class="fa fa-paper-plane"></i> Enviar mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="login" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+		<form class="w3-container" action="/action_page.php">
+			<div class="w3-section">
+				<label><b>Usuario</b></label>
+				<input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingrese su usuario" name="user" required>
+				<label><b>Contraseña</b></label>
+				<input class="w3-input w3-border" type="password" placeholder="Escriba su conraseña" name="pass" required>
+				<button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Iniciar sesion</button>
+				<input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Recordarme
+			</div>
+		</form>
+
+		<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+			<button onclick="document.getElementById('login').style.display='none'" type="button" class="w3-button w3-red">Canelar</button>
+			<span class="w3-right w3-padding w3-hide-small"><a href="#">¿Olvido su contraseña?</a></span>
+		</div>
+    </div>
+</div>
+
+<script>
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = $(".mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {
+            slideIndex = 1
+        }
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carousel, 10000); // Change image every 2 seconds
+    }
+</script>
+
+
+
+<!--<style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+<div id="menu" class="categoria">
+    <br>
+    <div class="w3-content w3-display-container" style="max-width:800px">
+        <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_nature_wide.jpg" style="max-width:100%">
+        <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_snow_wide.jpg" style="width:100%">
+        <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg" style="width:100%">
+    </div>
+    <br>
+    <div class="w3-container">
+        <div class="" style="background-image: url('{% static '/images/corona.jpg' %}');">
+            <div class="w3-row-padding">
+                <div class="w3-col l8 m6 w3-padding-16">
+                    <h1 class="w3-xxlarge w3-text-black"><b>MEDIDADES DE PREVENCION</b></h1>
+                    <h1 class="w3-xlarge w3-text-black"><b>¿Que podemos hacer para evitar contagiarnos?</b></h1>
+                    <button onclick="covid()" class="covid w3-button w3-light-grey w3-padding-large w3-section w3-hide-small">
+                        <b style='font-size:24px'><< Averiguar mas </b>
+                    </button>
+                </div>
+                <div class="w3-col l4 m6 w3-padding-16">
+                    <img src="{% static '/images/covid.jpg' %}" class="w3-image w3-right w3-hide-small" width="350" height="471">
+                    <div class="w3-center w3-hide-large w3-hide-medium">
+                        <button onclick="covid()" class="covid w3-button w3-light-grey w3-block w3-padding-large" >
+                            <b><< Averiguar mas</b>
+                        </button>
+                        <img src="{% static '/images/covid.jpg' %}" class="w3-image w3-margin-top" width="335" height="471">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="w3-container">
+        <div class="w3-teal">
+            <div class="w3-row-padding">
+                <div class="w3-col l4 m6 w3-padding-16">
+                    <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="{% static '/images/placeholder.png' %}" alt="App" width="335" height="471">
+                </div>
+                <div class="w3-col l8 m6 w3-padding-16">
+                    <h1 class="w3-xxlarge"><b>Conozca nuestra institucion</b></h1>
+                    <p>ACA IRIA UNA BREVE DESCRIPCION DE LA INSTITUCION.</p>
+                    <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" style='font-size:24px'>
+                        <b>Conozca mas >></b>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="w3-row">
+        Ultimas noticias
+        <br>FALTARIAN LOS MODELOS E ITERAR EN LAS ULTIMAS 3 NOTICIAS RECIENTES, PARA ESO HABRIA QUE UTILIZAR DJANGO
+    </div>
+    <br>
+</div>
+
+<div id="contacto" class="categoria">
+    CONTACTO
+</div>
+
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <div class="w3-center"><br>
+            <span onclick="$('#id01').hide();" class="w3-red w3-text-black w3-button w3-xlarge w3-transparent w3-display-topright" title="Cerra ventana">x</span>
+        </div>
+        <form class="w3-container" action="">
+            <div class="w3-section">
+                <label><b class="w3-text-black">Usuario</b></label>
+                <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingrese su usuario" name="user" required>
+                <label><b class="w3-text-black">Contraseña</b></label>
+                <input class="w3-input w3-border" type="password" placeholder="Ingrese su contraseña" name="passw" required>
+                <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Iniciar sesion</button>
+                <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> <b class="w3-text-black">Recordarme</b>
+            </div>
+        </form>
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button onclick="$('#id01').hide();" type="button" class="w3-button w3-red">Cancelar</button>
+            <span class="w3-right w3-padding w3-hide-small"><a href="#">¿Olvido su contraseña?</a></span>
+            <span class="w3-right w3-padding w3-hide-small"><a href="#">¿No tiene una cuenta?</a></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#login").click(function(){
+        $("#id01").show();
+    });
+
+    $(".covid").click(function(){
+        location.href = "covid";
+    });
+
+    $("#contacto").hide();
+
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = $(".mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > x.length) {
+            slideIndex = 1
+        }
+        x[slideIndex-1].style.display = "block";
+        setTimeout(carousel, 10000); // Change image every 2 seconds
+    }
+
+    function ocultarTodo(){
+        $(".categoria").hide();
+    }
+
+    function mostrarContacto(){
+        ocultarTodo();
+        $("#contacto").show();
+    }
+
+    function mostrarInicio(){
+        ocultarTodo();
+        $("#menu").show();
+    }
+</script>-->
+{% endblock %}
