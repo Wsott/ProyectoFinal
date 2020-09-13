@@ -28,6 +28,13 @@ class Noticia(models.Model):
     titulo = models.CharField(max_length=256)
     cuerpo = models.TextField()
 
+class Mensaje(models.Model):
+    id = models.IntegerField(primary_key=True, editable=False)
+    fecha = models.DateTimeField(auto_now_add=True)
+    nombre = models.CharField(max_length=256)
+    dni = models.IntegerField()
+    email = models.EmailField(max_length=128)
+    mensaje = models.TextField()
 
 class Turno(models.Model):
     pass
