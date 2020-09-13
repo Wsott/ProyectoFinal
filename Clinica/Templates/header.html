@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="{% static 'js/sweetalert2.js' %}"></script>
     <script src="{% static 'js/jquery.js' %}"></script>
     <style>
     body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
@@ -60,13 +61,14 @@
         <!-- Navbar (sit on top) -->
         <div class="w3-top w3-text-black w3-white">
           <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <a id="icono" class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
               <i class="fa fa-bars"></i>
             </a>
-            <a href="#home" class="w3-bar-item w3-button">HOME</a>
+            <a id="main" href="#home" class="w3-bar-item w3-button">HOME</a>
             <a href="#institucion" class="w3-bar-item w3-button w3-hide-small"><i class="fas fa-hospital"></i> INSTITUCION</a>
             <a href="#ruta" class="w3-bar-item w3-button w3-hide-small"><i class="fas fa-map-marker-alt"></i> COMO LLEGAR</a>
             <a href="#contacto" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACTO</a>
+            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-user-circle"></i> REGRESAR</a>
             <a class="w3-bar-item w3-right w3-button w3-hide-small" onclick="document.getElementById('login').style.display='block'"><i class="fas fa-user-circle"></i> INICIAR SESION</a>
           </div>
 
@@ -75,7 +77,8 @@
             <a href="#institucion" class="w3-bar-item w3-button" onclick="toggleFunction()">INSTITUCION</a>
             <a href="#ruta" class="w3-bar-item w3-button" onclick="toggleFunction()">COMO LLEGAR</a>
             <a href="#contacto" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACTO</a>
-            <a class="w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">INICIAR SESION</a>
+            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-user-circle"></i> REGRESAR</a>
+            <a class="w3-hide-large w3-hide-medium w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">INICIAR SESION</a>
           </div>
         </div>
 

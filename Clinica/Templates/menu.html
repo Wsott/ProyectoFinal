@@ -9,6 +9,17 @@
     .w3-badge {height:13px;width:13px;padding:0}
 </style>
 
+{% if msg is not None %}
+
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error al iniciar sesion',
+            text: '{{msg}}'
+        });
+    </script>
+{% endif %}
+
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
@@ -18,6 +29,7 @@
 </div>
 <hr>
 <div class="w3-content w3-container w3-padding-64" style="max-width:800px">
+    ACA ESTARIAN LAS NOTICIAS
     <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_nature_wide.jpg" style="max-width:100%">
     <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_snow_wide.jpg" style="width:100%">
     <img class="mySlides w3-animate-fading" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg" style="width:100%">
@@ -84,7 +96,6 @@
 
 <div class="w3-content w3-container w3-padding-64" id="contacto">
     <h3 class="w3-center">Contactenos</h3>
-    <p class="w3-center"><em>I'd love your feedback!</em></p>
 
     <div class="w3-row w3-padding-32 w3-section">
         <div class="w3-col m6 w3-container">
@@ -99,16 +110,16 @@
             <form action="/action_page.php" target="_blank">
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="Nombre">
+                        <input class="w3-input w3-border" type="text" placeholder="Nombre completo" required name="Nombre">
                     </div>
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
+                        <input class="w3-input w3-border" type="text" placeholder="DNI" required name="DNI">
                     </div>
                 </div>
 
                 <div class="w3-row-padding" style="margin:0 -10px 8px -8px">
                     <div class="">
-                        <input class="w3-input w3-border" type="text" placeholder="DNI" required name="DNI">
+                        <input class="w3-input w3-border" type="email" placeholder="Email" required name="Email">
                     </div>
                 </div>
 
@@ -123,7 +134,8 @@
 
 <div id="login" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-		<form class="w3-container" action="/action_page.php">
+		<form class="w3-container" method="POST">
+            {% csrf_token %}
 			<div class="w3-section">
 				<label><b>Usuario</b></label>
 				<input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingrese su usuario" name="user" required>
@@ -142,6 +154,8 @@
 </div>
 
 <script>
+    $(".volver").hide();
+
     var slideIndex = 0;
     carousel();
 
@@ -157,6 +171,15 @@
         }
         x[slideIndex-1].style.display = "block";
         setTimeout(carousel, 10000); // Change image every 2 seconds
+    }
+
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
     }
 </script>
 
