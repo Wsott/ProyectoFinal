@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .Views import menu, covid
+from .Views import menu, covid, formulario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', menu.landing),
-    path('covid/', covid.landing)
+    path('covid/', covid.landing),
+    path('nuevo/', formulario.landing)
 ]

@@ -61,24 +61,24 @@
         <!-- Navbar (sit on top) -->
         <div class="w3-top w3-text-black w3-white">
           <div class="w3-bar" id="myNavbar">
-            <a id="icono" class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <a id="icono" class="elemento w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
               <i class="fa fa-bars"></i>
             </a>
-            <a id="main" href="#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="#institucion" class="w3-bar-item w3-button w3-hide-small"><i class="fas fa-hospital"></i> INSTITUCION</a>
-            <a href="#ruta" class="w3-bar-item w3-button w3-hide-small"><i class="fas fa-map-marker-alt"></i> COMO LLEGAR</a>
-            <a href="#contacto" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACTO</a>
-            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-user-circle"></i> REGRESAR</a>
-            <a class="w3-bar-item w3-right w3-button w3-hide-small" onclick="document.getElementById('login').style.display='block'"><i class="fas fa-user-circle"></i> INICIAR SESION</a>
+              <a id="main" href="/" class=" w3-bar-item w3-button"><i class="fas fa-home"></i></a>
+            <a href="#institucion" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fas fa-hospital"></i> INSTITUCION</a>
+            <a href="#ruta" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fas fa-map-marker-alt"></i> COMO LLEGAR</a>
+            <a href="#contacto" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACTO</a>
+            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-arrow-alt-circle-left"></i> REGRESAR</a>
+            <a class="elemento w3-bar-item w3-right w3-button w3-hide-small" onclick="document.getElementById('login').style.display='block'"><i class="fas fa-user-circle"></i> INICIAR SESION</a>
           </div>
 
           <!-- Navbar on small screens -->
           <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="#institucion" class="w3-bar-item w3-button" onclick="toggleFunction()">INSTITUCION</a>
-            <a href="#ruta" class="w3-bar-item w3-button" onclick="toggleFunction()">COMO LLEGAR</a>
-            <a href="#contacto" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACTO</a>
-            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-user-circle"></i> REGRESAR</a>
-            <a class="w3-hide-large w3-hide-medium w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">INICIAR SESION</a>
+            <a href="#institucion" class="elemento w3-bar-item w3-button" onclick="toggleFunction()">INSTITUCION</a>
+            <a href="#ruta" class="elemento w3-bar-item w3-button" onclick="toggleFunction()">COMO LLEGAR</a>
+            <a href="#contacto" class="elemento w3-bar-item w3-button" onclick="toggleFunction()">CONTACTO</a>
+            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-arrow-alt-circle-left"></i> REGRESAR</a>
+            <a class="elemento w3-hide-large w3-hide-medium w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'">INICIAR SESION</a>
           </div>
         </div>
 
@@ -90,39 +90,3 @@
         </footer>
     </body>
 </html>
-<!--<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Krankenhaus 2020</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/w3.css' %}">
-        <link rel="stylesheet" href="{% static 'css/barra.css' %}">
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
-        <script src="{% static 'js/jquery.js' %}"></script>
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-        <style>
-            body,h1,h2,h3,h4,h5 {font-family: 'Libre Baskerville', sans-serif;}
-        </style>
-    </head>
-    <body id="inicio" class="w3-indigo">
-        <header class="w3-bar w3-light-blue">
-            <div class="topnav">
-                <div class="topnav-centered">
-                    <a href="#inicio" class="active" onclick="mostrarInicio()"><img style="height: 73px" src="{% static 'images/LogoSerio.png' %}"></a>
-                </div>
-                <a href="" id="noticias" class="opcion">Noticias</a>
-                <a href="#contacto" onclick="mostrarContacto()" class="opcion">Contactenos</a>
-                <div class="topnav-right">
-                    <a href="#institucion" onclick="mostrarInstitucional()" class="opcion">Instintucional</a>
-                    <a id="login" class="opcion">Iniciar sesion</a>
-                </div>
-            </div>
-        </header>
-         block content
-         endblock
-        <footer class="w3-center w3-black w3-padding-16">
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-        </footer>
-    </body>
-</html>-->
