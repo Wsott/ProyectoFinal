@@ -53,6 +53,7 @@
         </div>
         <div class="w3-container">
             <form method="POST">
+                {% csrf_token %}
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-third">
                         <label>Nombre</label><br>
@@ -68,11 +69,15 @@
                     </div>
                 </div>
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                    <div class="w3-half">
+                    <div class="w3-third">
+                        <label>Fecha de nacimiento</label><br>
+                        <input class="w3-input w3-border w3-round" type="date" placeholder="Ingrese su fecha de nacimiento" name="Nacimiento" required>
+                    </div>
+                    <div class="w3-third">
                         <label>Correo electronico</label><br>
                         <input class="w3-input w3-border w3-round" type="email" placeholder="Escriba su correo" name="Correo" required>
                     </div>
-                    <div class="w3-half">
+                    <div class="w3-third">
                         <label>Telefono de contacto (Sin guiones)</label><br>
                         <input class="w3-input w3-border w3-round" type="number" placeholder="Escriba su telefono" name="Telefono" required>
                     </div>
@@ -91,11 +96,11 @@
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-half">
                         <label>Usuario</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Ingrese el usuario que utilizara" name="Direccion" required>
+                        <input class="w3-input w3-border w3-round" type="text" placeholder="Ingrese el usuario que utilizara" name="Usuario" required>
                     </div>
                     <div class="w3-half">
                         <label>Localidad</label><br>
-                        <input class="w3-input w3-border w3-round" type="password" placeholder="Ingrese su contraseña" name="Localidad" required>
+                        <input class="w3-input w3-border w3-round" type="password" placeholder="Ingrese su contraseña" name="Password" required>
                     </div>
                 </div>
                 <input class="w3-check" type="checkbox" required>

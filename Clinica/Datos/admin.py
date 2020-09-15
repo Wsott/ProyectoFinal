@@ -6,7 +6,7 @@ from Datos.models import Usuario, Persona, Noticia, Turno, Mensaje
 
 
 class PersonaAdmin(admin.ModelAdmin):
-    list_display = ("dni", "nombre", "apellido", "nacimiento", "domicilio")
+    list_display = ("dni", "nombre", "apellido", "nacimiento", "telefono", "localidad", "domicilio")
 
 
 class UsuarioAdmin(admin.ModelAdmin):
