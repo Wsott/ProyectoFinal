@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 class Persona(models.Model):
     dni = models.IntegerField(primary_key=True, editable=True)
-    nombre = models.CharField(max_length=64, unique=True)
-    apellido = models.CharField(max_length=64, unique=True)
+    nombre = models.CharField(max_length=64)
+    apellido = models.CharField(max_length=64)
     nacimiento = models.DateField()
     telefono = models.CharField(max_length=16)
     localidad = models.CharField(max_length=64)
@@ -38,5 +38,22 @@ class Mensaje(models.Model):
     email = models.EmailField(max_length=128)
     mensaje = models.TextField()
 
+class Medico(models.Model):
+    id = models.IntegerField(primary_key=True, editable=False)
+    nombre = models.CharField(max_length=64)
+    apellido = models.CharField(max_length=64)
+    nacimiento = models.DateField()
+    especialidad = models.CharField(max_length=64)
+
+    def __str__(self):
+        return str(self.id)
+
 class Turno(models.Model):
-    pass
+    id = models.IntegerField(primary_key=True, editable=False)
+    fk_persona_dni = models.OneToOneField(Persona,
+                                          on_delete=models.CASCADE,
+                                          null=True)
+    fk_medico_id = models.OneToOneField(Medico,
+                                        on_delete=models.SET_NULL,
+                                        null=True)
+    fecha = models.DateField(null=True)

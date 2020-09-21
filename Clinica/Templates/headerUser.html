@@ -36,7 +36,7 @@
 
     /* Second image (Portfolio) */
     .bgimg-2 {
-      background-image: url("/w3images/parallax2.jpg");
+      background-image: url('{% static '/images/consulta.jpg' %}');
       min-height: 400px;
     }
 
@@ -64,26 +64,37 @@
             <a id="icono" class="elemento w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
               <i class="fa fa-bars"></i>
             </a>
-              <a id="main" href="/" class=" w3-bar-item w3-button"><i class="fas fa-home"></i></a>
-            <a href="#institucion" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fas fa-hospital"></i><b> LINK 1</b></a>
-            <a href="#ruta" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fas fa-map-marker-alt"></i><b> LINK 2</b></a>
+              <a id="main" href="/usuario" class=" w3-bar-item w3-button"><i class="fas fa-home"></i></a>
+            <a href="/usuario/perfil" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fas fa-address-card"></i><b> PERFIL</b></a>
+            <a href="/usuario/turnos" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fas fa-stethoscope"></i><b> TURNOS</b></a>
             <a href="#contacto" class="elemento w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i><b> LINK 3</b></a>
-            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-arrow-alt-circle-left"></i><b> LINK 4</b></a>
-            <a class="elemento w3-bar-item w3-right w3-button w3-hide-small" onclick="document.getElementById('login').style.display='block'"><i class="fas fa-user-circle"></i><b> LINK 5</b></a>
+            <a href="/usuario/logout" class="elemento w3-bar-item w3-right w3-button w3-hide-small"><i class="fas fa-sign-out-alt"></i><b> CERRAR SESION</b></a>
           </div>
 
           <!-- Navbar on small screens -->
           <div id="navDemo" class="w3-bar-block w3-teal w3-hide w3-hide-large w3-hide-medium">
-            <a href="#institucion" class="elemento w3-bar-item w3-button" onclick="toggleFunction()"><b>LINK 1</b></a>
-            <a href="#ruta" class="elemento w3-bar-item w3-button" onclick="toggleFunction()"><b>LINK 2</b></a>
+            <a href="/usuario/perfil" class="elemento w3-bar-item w3-button" onclick="toggleFunction()"><b>PERFIL</b></a>
+            <a href="/turnos" class="elemento w3-bar-item w3-button" onclick="toggleFunction()"><b>TURNOS</b></a>
             <a href="#contacto" class="elemento w3-bar-item w3-button" onclick="toggleFunction()"><b>LINK 3</b></a>
-            <a class="volver w3-bar-item w3-right w3-button" onclick="regresar()"><i class="fas fa-arrow-alt-circle-left"></i><b>LINK 4</b></a>
-            <a class="elemento w3-hide-large w3-hide-medium w3-bar-item w3-button" onclick="document.getElementById('login').style.display='block'"><b>LINK 5</b></a>
+            <a href="/usuario/logout" class="elemento w3-hide-large w3-hide-medium w3-bar-item w3-button"><b>CERRAR SESION</b></a>
           </div>
         </div>
 
+
         {% block content %}
         {% endblock %}
+
+        <script>
+
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
 
         <footer class="w3-center w3-black w3-padding-16">
             <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>

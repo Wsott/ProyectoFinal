@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.template import loader
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.exceptions import ObjectDoesNotExist
 
 from Datos.models import Usuario, Noticia, Mensaje
@@ -31,11 +31,19 @@ def landing(request):
                 if (elemento == None):
                     print("X")
                 else:
-                    print("O")
+                    if(elemento.user == post["user"] and elemento.password == post["pass"]):
+                        request.session["actual"] = elemento.user
+                        request.session.set_expiry(0)
+                        return redirect("panel")
+                    else:
+                        error = f"Error en las credenciales al iniciar sesion. Verifique que el usuario y/o la contraseña sean correctas"
+                        contexto["msg"] = "Error en las credenciales al iniciar sesion. Verifique que el usuario y/o la contraseña sean correctas"
+                        # msg = {"msg": error}
+                        return render(request, "menu.html", contexto)
             except ObjectDoesNotExist:
                 print("BOOM")
                 error = f"No existe un usuario llamado {post['user']}"
-                contexto["msg"] = error
+                contexto["msg"] = "Error en las credenciales al iniciar sesion. Verifique que el usuario y/o la contraseña sean correctas"
                 #msg = {"msg": error}
                 return render(request, "menu.html", contexto)
             else:
