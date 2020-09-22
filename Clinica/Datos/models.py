@@ -9,10 +9,21 @@ class Persona(models.Model):
     telefono = models.CharField(max_length=16)
     localidad = models.CharField(max_length=64)
     domicilio = models.CharField(max_length=256)
-    grupoSanguineo = models.CharField(max_length=4, null=True)
 
     def __str__(self):
         return str(self.dni)
+
+class Salud(models.Model):
+    fk_persona_dni = models.OneToOneField(Persona,
+                                          on_delete=models.CASCADE,
+                                          primary_key=True)
+    grupoSanguineo = models.CharField(max_length=4, null=True)
+    fuma = models.CharField(max_length=16)
+    bebe = models.CharField(max_length=16)
+    alergias = models.CharField(max_length=512)
+    medicamentos = models.CharField(max_length=512)
+    enfcronica = models.CharField(max_length=512)
+    antquirurgicos = models.CharField(max_length=512)
 
 class Usuario(models.Model):
     fk_persona_dni = models.OneToOneField(Persona,

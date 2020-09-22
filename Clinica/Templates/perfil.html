@@ -21,42 +21,44 @@
 
         <div class="w3-container">
             <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="discriminador" value="personal">
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-third">
                         <label>Nombre</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su nombre" name="Nombre" required>
+                        <input value="{{persona.nombre}}" class="w3-input w3-border w3-round" type="text" placeholder="Escriba su nombre" name="Nombre" required>
                     </div>
                     <div class="w3-third">
                         <label>Apellido</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su apellido" name="Apellido" required>
+                        <input value="{{persona.apellido}}" class="w3-input w3-border w3-round" type="text" placeholder="Escriba su apellido" name="Apellido" required>
                     </div>
                     <div class="w3-third">
                         <label>DNI</label><br>
-                        <input class="w3-input w3-border w3-round" type="number" placeholder="Escriba su DNI" name="DNI" required>
+                        <input value="{{persona.dni}}" class="w3-input w3-border w3-round" type="number" placeholder="Escriba su DNI" name="DNI" required>
                     </div>
                 </div>
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-third">
                         <label>Fecha de nacimiento</label><br>
-                        <input class="w3-input w3-border w3-round" type="date" placeholder="Ingrese su fecha de nacimiento" name="Nacimiento" required>
+                        <input value="{{persona.nacimiento|date:'Y-m-d'}}" class="w3-input w3-border w3-round" type="date" placeholder="Ingrese su fecha de nacimiento" name="Nacimiento" required>
                     </div>
                     <div class="w3-third">
                         <label>Correo electronico</label><br>
-                        <input class="w3-input w3-border w3-round" type="email" placeholder="Escriba su correo" name="Correo" required>
+                        <input value="{{usuario.email}}" class="w3-input w3-border w3-round" type="email" placeholder="Escriba su correo" name="Correo" required>
                     </div>
                     <div class="w3-third">
                         <label>Telefono de contacto (Sin guiones)</label><br>
-                        <input class="w3-input w3-border w3-round" type="number" placeholder="Escriba su telefono" name="Telefono" required>
+                        <input value="{{persona.telefono}}" class="w3-input w3-border w3-round" type="number" placeholder="Escriba su telefono" name="Telefono" required>
                     </div>
                 </div>
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-half">
                         <label>Direccion</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su direccion" name="Direccion" required>
+                        <input value="{{persona.domicilio}}" class="w3-input w3-border w3-round" type="text" placeholder="Escriba su direccion" name="Direccion" required>
                     </div>
                     <div class="w3-half">
                         <label>Localidad</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su localidad" name="Localidad" required>
+                        <input value="{{persona.localidad}}" class="w3-input w3-border w3-round" type="text" placeholder="Escriba su localidad" name="Localidad" required>
                     </div>
                 </div>
 
@@ -66,64 +68,68 @@
         </div>
       </div>
 
+
+
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-heartbeat fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Datos medicos</h2>
 
         <div class="w3-container">
             <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="discriminador" value="salud">
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-third">
                         <label>Grupo sanguineo</label><br>
-                        <select class="w3-select" id="cars">
+                        <select class="w3-select" name="sangre">
                           <option value="Null" selected disabled>Seleccione una opcion</option>
-                          <option value="O-">O-</option>
-                          <option value="O+">O+</option>
-                          <option value="A-">A-</option>
-                          <option value="A+">A+</option>
-                          <option value="B-">B-</option>
-                          <option value="B+">B+</option>
-                          <option value="AB-">AB-</option>
-                          <option value="AB+">AB+</option>
+                          <option value="O-" id="O-">O-</option>
+                          <option value="O+" id="O+">O+</option>
+                          <option value="A-" id="A-">A-</option>
+                          <option value="A+" id="A+">A+</option>
+                          <option value="B+" id="B-">B-</option>
+                          <option value="B+" id="B+">B+</option>
+                          <option value="AB-" id="AB-">AB-</option>
+                          <option value="AB+" id="AB+">AB+</option>
                         </select>
                     </div>
                     <div class="w3-third">
                         <label>¿Fuma?</label><br>
-                        <input class="w3-radio" type="radio" id="male" name="fuma" value="Si">
-                        <label for="male">Si</label>
-                        <input class="w3-radio" type="radio" id="female" name="fuma" value="No">
-                        <label for="female">No</label>
-                        <input class="w3-radio" type="radio" id="other" name="fuma" value="Socialmete">
-                        <label for="other">Socialmente</label>
+                        <input class="w3-radio" type="radio" id="fsi" name="fuma" value="fsi">
+                        <label for="fsi">Si</label>
+                        <input class="w3-radio" type="radio" id="fno" name="fuma" value="fno">
+                        <label for="fno">No</label>
+                        <input class="w3-radio" type="radio" id="fsoc" name="fuma" value="fsoc">
+                        <label for="fsoc">Socialmente</label>
                     </div>
                     <div class="w3-third">
                         <label>¿Bebe?</label><br>
-                        <input class="w3-radio" type="radio" id="male" name="bebe" value="Si">
-                        <label for="male">Si</label>
-                        <input class="w3-radio" type="radio" id="female" name="bebe" value="No">
-                        <label for="female">No</label>
-                        <input class="w3-radio" type="radio" id="other" name="bebe" value="Socialmete">
-                        <label for="other">Socialmente</label>
+                        <input class="w3-radio" type="radio" id="bsi" name="bebe" value="bsi">
+                        <label for="bsi">Si</label>
+                        <input class="w3-radio" type="radio" id="bno" name="bebe" value="bno">
+                        <label for="bno">No</label>
+                        <input class="w3-radio" type="radio" id="bsoc" name="bebe" value="bsoc">
+                        <label for="bsoc">Socialmente</label>
                     </div>
 
                 </div>
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-half">
                         <label>Alergias</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su DNI" name="Alergias" required>
+                        <input value="{{historial.alergias}}" class="w3-input w3-border w3-round" type="text" placeholder="Alergias que posea" name="Alergias" required>
                     </div>
                     <div class="w3-half">
                         <label>Medicamentos que consume</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su DNI" name="Alergias" required>
+                        <input value="{{historial.medicamentos}}" class="w3-input w3-border w3-round" type="text" placeholder="Medicamentos recetados" name="Medicamentos" required>
                     </div>
                 </div>
                 <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                     <div class="w3-half">
                         <label>Enfermedades cronicas</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Ingrese su fecha de nacimiento" name="EnfermedadesCronicas" required>
+                        <input value="{{historial.enfcronica}}" class="w3-input w3-border w3-round" type="text" placeholder="Enfermedades cronicas que padece" name="EnfermedadesCronicas" required>
                     </div>
                     <div class="w3-half">
                         <label>Antecendentes quirurgico</label><br>
-                        <input class="w3-input w3-border w3-round" type="text" placeholder="Escriba su correo" name="Cirugias" required>
+                        <input value="{{historial.antquirurgicos}}" class="w3-input w3-border w3-round" type="text" placeholder="Cirugias que se le realizo" name="Cirugias" required>
                     </div>
                 </div>
 
@@ -138,9 +144,10 @@
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
         <div class="w3-container w3-center">
             <form method="POST">
-
+                {% csrf_token %}
+                <input type="hidden" name="discriminador" value="ficha">
                     <div class="w3-half">
-                      <input class="w3-button w3-black  w3-section" type="submit" value="Generar historial medico">
+                      <input class="w3-button w3-black  w3-section" type="submit" value="Generar ficha medica">
                     </div>
           </form>
           <form method="POST">
@@ -155,4 +162,10 @@
 
     <!-- End Right Column -->
     </div>
+
+<script>
+    $("#{{historial.bebe}}").attr('checked','checked');
+    $("#{{historial.fuma}}").attr('checked','checked');
+    $("#{{historial.grupoSanguineo}}").attr('selected','selected');
+</script>
 {% endblock %}

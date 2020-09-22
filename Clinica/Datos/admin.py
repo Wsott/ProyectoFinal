@@ -1,12 +1,16 @@
 from django.contrib import admin
 
-from Datos.models import Usuario, Persona, Noticia, Turno, Mensaje
+from Datos.models import Usuario, Persona, Noticia, Turno, Mensaje, Salud
 
 # Register your models here.
 
 
 class PersonaAdmin(admin.ModelAdmin):
     list_display = ("dni", "nombre", "apellido", "nacimiento", "telefono", "localidad", "domicilio")
+
+
+class SaludAdmin(admin.ModelAdmin):
+    list_display = ("fk_persona_dni",)
 
 
 class UsuarioAdmin(admin.ModelAdmin):
@@ -25,3 +29,4 @@ admin.site.register(Persona, PersonaAdmin)
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Noticia, NoticiaAdmin)
 admin.site.register(Mensaje, MensajeAdmin)
+admin.site.register(Salud, SaludAdmin)
