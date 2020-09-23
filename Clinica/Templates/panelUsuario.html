@@ -11,8 +11,26 @@
 </div>
 
 <hr>
-<div class="w3-teal w3-center">
-	<h3>Notificaciones</h3>
+<div class="w3-center w3-container">
+	<h3 class="w3-teal">Notificaciones</h3>
+    <table class="w3-table w3-centered w3-border w3-striped w3-card  w3-hoverable ">
+        {% if turno %}
+            <tr class="w3-teal">
+                <th>Especialista</th>
+                <th>Fecha</th>
+            </tr>
+            {% for x in turno %}
+            <tr>
+                <td>{{x.especialista}}</td>
+                <td>{{x.fecha}}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr class="w3-teal"><th>Proximos turnos</th></tr>
+            <tr><td>No hay proximos turnos</td></tr>
+        {% endif %}
+    </table>
+    <br>
 </div>
 
 <script>

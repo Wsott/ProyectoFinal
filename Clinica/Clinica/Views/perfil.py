@@ -138,6 +138,7 @@ def landing(request):
     else:
         nombre = request.session.get('actual')
         elemento = Usuario.objects.get(user=nombre)
+
         try:
             historial = Salud.objects.get(fk_persona_dni=elemento.fk_persona_dni)
         except ObjectDoesNotExist:
