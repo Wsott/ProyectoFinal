@@ -24,9 +24,13 @@ class NoticiaAdmin(admin.ModelAdmin):
 class MensajeAdmin(admin.ModelAdmin):
     list_display = ("id", "fecha", "nombre", "dni", "email", "mensaje")
 
+class TurnoAdmin(admin.ModelAdmin):
+    list_display = ("fk_persona_dni", "fecha", "especialista")
+
 
 admin.site.register(Persona, PersonaAdmin)
 admin.site.register(Usuario, UsuarioAdmin)
 admin.site.register(Noticia, NoticiaAdmin)
 admin.site.register(Mensaje, MensajeAdmin)
 admin.site.register(Salud, SaludAdmin)
+admin.site.register(Turno, TurnoAdmin)

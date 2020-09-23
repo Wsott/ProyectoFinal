@@ -61,10 +61,10 @@ class Medico(models.Model):
 
 class Turno(models.Model):
     id = models.IntegerField(primary_key=True, editable=False)
-    fk_persona_dni = models.OneToOneField(Persona,
+    fk_persona_dni = models.ForeignKey(Persona,
                                           on_delete=models.CASCADE,
                                           null=True)
-    fk_medico_id = models.OneToOneField(Medico,
-                                        on_delete=models.SET_NULL,
-                                        null=True)
+    especialista = models.CharField(max_length=128)
+    pago = models.CharField(max_length=32)
+    nombrePago = models.CharField(max_length=64)
     fecha = models.DateField(null=True)

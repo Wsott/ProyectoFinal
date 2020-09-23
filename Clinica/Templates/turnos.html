@@ -10,7 +10,174 @@
 </div>
 
 
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+
+        <div class="w3-container">
+
+
+          <p class="w3-large"><b><i class="fas fa-prescription fa-fw w3-margin-right w3-text-teal"></i>Pasos para solicitar turno</b></p>
+          <p id="paso1">1. Datos sobre la consulta</p>
+          <p id="paso3">2. Datos sobre obra social</p>
+          <p id="paso4">3. Descargar comprobante</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div id="progreso" class="w3-container w3-center w3-round-xlarge w3-teal" style="width:33%">33%</div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    <form method="POST">
+    {% csrf_token %}
+      <div id="uno" class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-file-alt fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>1. Datos sobre la consulta</h2>
+        <div class="w3-container">
+          <p>Elija el especialista con el que se quiere atender y la fecha en el que se hara la consulta en la clinica.</p>
+          <hr>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+              <div class="w3-half">
+                  <label>Especialistas</label><br>
+                        <select class="w3-select" name="medico">
+                          <option value="Null" selected disabled>Seleccione una opcion</option>
+                          <option id="B" value="Emmet Pinson (Nefrología)">Emmet Pinson (Nefrología)</option>
+                          <option id="C" value="Denny Duignan (Cardiología)">Denny Duignan (Cardiología)</option>
+                          <option id="D" value="Cassius Weeks (Pediatría)">Cassius Weeks (Pediatría)</option>
+                          <option id="E" value="Derrik Wytchard (Dermatología)">Derrik Wytchard (Dermatología)</option>
+                          <option id="F" value="Barron Woodberry (Otorrinolaringología)">Barron Woodberry (Otorrinolaringología)</option>
+                          <option id="G" value="Leilah Longhorn (Neumología)">Leilah Longhorn (Neumología)</option>
+                          <option id="H" value="Cecilia Ingman (Gastroenterología)">Cecilia Ingman (Gastroenterología)</option>
+                        </select>
+              </div>
+              <div class="w3-half">
+                        <label>Fecha de la consulta</label><br>
+                        <input class="w3-input w3-border w3-round" type="date" placeholder="Ingrese la fecha de la consulta" name="Fecha" required>
+              </div><br><br><br><br>
+                    <button id="irDos" class="w3-right w3-button w3-circle w3-teal"><i class='fas fa-arrow-right'></i></button>
+                </div><br>
+        </div>
+
+      </div>
+
+      <div id="dos" class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-file-alt fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>2. Datos sobre la forma de pago</h2>
+        <div class="w3-container">
+          <p>Complete los datos sobre la forma de pago para la consulta.</p>
+          <hr>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-half">
+                        <label>Forma de pago</label><br>
+                        <input class="w3-radio" type="radio" id="obrasocial" name="FormaPago" value="Obra-social">
+                        <label for="obrasocial">Obra S.</label>
+                        <input class="w3-radio" type="radio" id="prepaga" name="FormaPago" value="Prepaga">
+                        <label for="prepaga">Prepaga</label>
+                        <input class="w3-radio" type="radio" id="particular" name="FormaPago" value="Particular">
+                        <label for="particular">Particular</label>
+                    </div>
+                    <div class="w3-half">
+                        <label>Nombre</label><br>
+                        <input class="w3-input w3-border w3-round" type="text" placeholder="Ej: INSSSEP, ACA Salud, Tarj. debito" name="Tipo" required>
+                    </div>
+                </div><br>
+                <button id="volverUno" class="w3-button w3-circle w3-teal"><i class='fas fa-arrow-left'></i></button>
+                <button id="irTres" class="w3-right w3-button w3-circle w3-teal"><i class='fas fa-arrow-right'></i></button><br>
+                <br>
+        </div>
+
+      </div>
+
+      <div id="tres" class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fas fa-file-alt fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>3. Descargar comprobante</h2>
+        <div class="w3-container">
+          <p>Descargue el comprobante que respaldara su solicitud de turno y luego presione el boton de confirmacion para guardar su turno. <b>¡Atencion! Descargar el comprobante NO significa que su turno ya esta guardado, solamente se guarda cuando confirme la consulta</b></p>
+          <hr>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+        <div class="w3-container w3-center">
+
+                    <input type="hidden" name="discriminador" value="confirmar">
+                    <div class="w3-half" hidden>
+                      <input class="w3-button w3-teal  w3-section" type="submit" value="Confirmar turno">
+                    </div>
+          </form>
+            <form method="POST">
+                {% csrf_token %}
+                    <input type="hidden" name="discriminador" value="comprobante">
+                    <div class="">
+                      <input class="w3-button w3-teal  w3-section" type="submit" value="Descargar comprobante">
+                    </div>
+          </form>
+        </div>
+      </div>
+                <button id="volverDos" class="w3-button w3-circle w3-teal"><i class='fas fa-arrow-left'></i></button><br><br>
+        </div>
+
+      </div>
+
+
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+
 <script>
+
+    $("#dos").hide();
+    $("#tres").hide();
+
+    function progresar(valor){
+      $("#progreso").css("width", valor + "%");
+      $("#progreso").text(valor + "%");
+    }
+
+    function retroceder(valor){
+      $("#progreso").css("width", valor + "%");
+      $("#progreso").text(valor + "%");
+    }
+
+    $("#irDos").click(function(){
+      $("#uno").hide();
+      $("#dos").show();
+      $("#dos").focus();
+      progresar(66);
+    });
+
+    $("#irTres").click(function(){
+      $("#dos").hide();
+      $("#tres").show();
+      $("#tres").focus();
+      progresar(100);
+    });
+
+    $("#volverUno").click(function(){
+      $("#dos").hide();
+      $("#uno").show();
+      $("#uno").focus();
+      retroceder(33);
+    });
+
+    $("#volverDos").click(function(){
+      $("#tres").hide();
+      $("#dos").show();
+      $("#dos").focus();
+      retroceder(66);
+    });
 
     function toggleFunction() {
         var x = document.getElementById("navDemo");
